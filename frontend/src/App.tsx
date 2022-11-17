@@ -9,9 +9,9 @@ function App() {
       <Header></Header>
       <main>
       <section id="sales">
-
-        <div className ="dsmeta-container"></div>
-        <SalesCard/>
+        <div className ="dsmeta-container">
+          <SalesCard/>
+        </div>
       </section>
       </main>
 
