@@ -10,12 +10,17 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Optional;
 
 @Service
 public class SaleService {
 
     @Autowired
     private SaleRepository saleRepository;
+
+    public Optional<Sale> findSaleById(Long saleId) {
+        return saleRepository.findById(saleId);
+    }
 
     public Page<Sale> findAll(String minDate, String maxDate, Pageable pageable) {
         LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
