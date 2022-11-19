@@ -47,7 +47,7 @@ public class SmsService {
     }
 
     private Sale findSaleById(Long saleId) {
-        return this.saleService.findSaleById(saleId).get();
+        return this.saleService.findSaleById(saleId).orElse(null);
     }
 
     private String createMessage(Sale sale) {
